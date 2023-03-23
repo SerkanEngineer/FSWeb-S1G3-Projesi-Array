@@ -40,8 +40,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(sequence){
+  let copy=sequence;
+  return copy;
 }
 
 
@@ -56,8 +57,8 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(tatlar){
+  return tatlar.length==25;
 }
 
 
@@ -74,9 +75,11 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(tatlar, str){
+   tatlar.unshift(str);
+  return tatlar ;
 }
+console.log(cesitEkle(orijinalTatlar, "kakule"));
 
 
 /* Cörev 4:
@@ -92,8 +95,10 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+  dizi.pop();
+  return dizi;
+  
 }
 
 
@@ -108,8 +113,9 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
+function indekstekiCesitiGetir(argument , i){
   /*kod buraya*/
+  return argument[i];
 }
 
 
@@ -128,8 +134,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar , lezzet){
+  const indis = tatlar.indexOf(lezzet);
+  tatlar.splice(indis,1);
+  return tatlar;
 }
 
 
@@ -154,8 +162,15 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
+function ismeGoreFiltrele(tatlar, filtre){
+  let secilmis =[];
   /*kod buraya*/
+  for(let i=0;i<tatlar.length;i++){
+    if( tatlar[i].includes(filtre)){
+      secilmis.push(tatlar[i]);
+    }
+  }
+  return secilmis ;
 }
 
 
